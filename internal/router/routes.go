@@ -24,4 +24,6 @@ func initializeRoutes(router *gin.Engine) {
 	shortenHandler := handler.NewShortenHandler(shortenService)
 
 	r.POST("/shorten", shortenHandler.ShortUrl)
+	r.GET("/:shortId", shortenHandler.RedirectUrl)
+
 }
